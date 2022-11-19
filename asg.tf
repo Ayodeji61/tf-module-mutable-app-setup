@@ -6,8 +6,8 @@ resource "aws_launch_template" "launch-template" {
 
 resource "aws_autoscaling_group" "asg" {
   desired_capacity = var.min_size
-  max_size = var.max_size
-  min_size = var.min_size
+  max_size         = var.max_size
+  min_size         = var.min_size
 
   launch_template {
     id      = aws_launch_template.launch-template.id
