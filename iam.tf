@@ -44,7 +44,7 @@ resource "aws_iam_role" "role" {
   }
 }
 
-resource "aws_iam_role_ policy_attachment" "policy-to-role-attach" {
+resource "aws_iam_role_policy_attachment" "policy-to-role-attach" {
   role      = aws_iam_role.role.name
   policy_arn = aws_iam_policy.policy.arn
 }
