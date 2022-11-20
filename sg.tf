@@ -12,6 +12,7 @@ resource "aws_security_group" "sg" {
     cidr_blocks      = [var.BASTION_NODE]
   }
 
+
   egress {
     from_port        = 0
     to_port          = 0
