@@ -1,3 +1,4 @@
+/*
 resource "aws_security_group" "sg" {
   name        = "${var.env}-${var.name}-ec2-sg"
   description = "${var.env}-${var.name}-ec2-sg"
@@ -24,3 +25,4 @@ resource "aws_security_group" "sg" {
     Name = "allow_tls"
   }
 }
+*/
