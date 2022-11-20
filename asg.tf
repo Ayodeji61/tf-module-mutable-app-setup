@@ -15,7 +15,7 @@ resource "aws_launch_template" "launch-template" {
   } ))
 }
 
-/*
+
 resource "aws_autoscaling_group" "asg" {
   name              = "${var.env}-${var.name}-asg"
   desired_capacity = var.min_size
@@ -35,4 +35,3 @@ resource "aws_autoscaling_group" "asg" {
 
 }
 
-*/
