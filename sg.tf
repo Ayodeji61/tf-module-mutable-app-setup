@@ -9,8 +9,7 @@ resource "aws_security_group" "sg" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = [aws_vpc.main.cidr_block]
-    ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+    cidr_blocks      = [var.BASTION_NODE]
   }
 
   egress {
@@ -22,6 +21,6 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name = "allow_tls"
+    Name = "${var.env}-${var.name}-ec2-sg"
   }
 }
