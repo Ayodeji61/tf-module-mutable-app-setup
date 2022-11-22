@@ -24,7 +24,7 @@ resource "aws_iam_policy" "policy" {
   })
 }
 
-/*
+
 resource "aws_iam_role" "role" {
   name = "${var.env}-${var.name}-role"
 
@@ -46,7 +46,7 @@ resource "aws_iam_role" "role" {
     tag-key = "${var.env}-${var.name}-role"
   }
 }
-*/
+
 
 resource "aws_iam_role_policy_attachment" "policy-to-role-attach" {
   role       = aws_iam_role.role.name
