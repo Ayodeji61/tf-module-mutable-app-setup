@@ -6,25 +6,25 @@ resource "aws_iam_policy" "policy" {
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
   policy = jsonencode({
-
-    "Version": "2012-10-17",
-    "Statement": [
-  {
-    "Sid": "VisualEditor0",
-    "Effect": "Allow",
-    "Action": [
-    "secretsmanager:GetSecretValue",
-    "ssm:GetParameter",
-    "secretsmanager:ListSecrets"
-  ],
-    "Resource": "*"
-  }
-  ]
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Sid" : "VisualEditor0",
+        "Effect" : "Allow",
+        "Action" : [
+          "secretsmanager:GetSecretValue",
+          "ssm:GetParameter",
+          "secretsmanager:ListSecrets"
+        ],
+        "Resource" : "*"
+      }
+    ]
   })
 }
 
 resource "aws_iam_role" "role" {
   name = "${var.env}-${var.name}-role"
+
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -45,7 +45,7 @@ resource "aws_iam_role" "role" {
 }
 
 resource "aws_iam_role_policy_attachment" "policy-to-role-attach" {
-  role      = aws_iam_role.role.name
+  role       = aws_iam_role.role.name
   policy_arn = aws_iam_policy.policy.arn
 }
 
