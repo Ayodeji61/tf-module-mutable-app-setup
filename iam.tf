@@ -1,3 +1,5 @@
+/*
+
 resource "aws_iam_policy" "policy" {
   name        = "${var.env}-${var.name}-policy"
   path        = "/"
@@ -53,3 +55,5 @@ resource "aws_iam_instance_profile" "instance_profile" {
   name = "${var.env}-${var.name}-role"
   role = aws_iam_role.role.name
 }
+
+*/
