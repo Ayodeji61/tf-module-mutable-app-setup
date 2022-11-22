@@ -52,7 +52,7 @@ resource "aws_lb_listener_rule" "rule-frontend" {
 
 resource "aws_lb_listener" "public-https" {
   count             = var.type == "frontend"  ? 1 : 0
-  load_balancer_arn = var.alb["public"].lb_listener_arn
+  load_balancer_arn = var.alb["public"].lb_arn
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
