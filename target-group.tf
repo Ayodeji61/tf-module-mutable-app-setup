@@ -40,6 +40,12 @@ resource "aws_lb_listener_rule" "rule-frontend" {
     type = "forward"
     target_group_arn = aws_lb_target_group.main.arn
   }
+
+  condition {
+    host_header {
+      values = ["${var.env}.ayodejidevops.online"]
+    }
+  }
 }
 
 resource "aws_lb_listener" "public-https" {
