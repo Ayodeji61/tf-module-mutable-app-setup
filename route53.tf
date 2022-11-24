@@ -9,7 +9,7 @@ resource "aws_route53_record" "private" {
 
 resource "aws_route53_record" "public" {
   count = var.type == "frontend" ? 1 : 0
-  zone_id = var.private_zone_id
+  zone_id = var.public_zone_id
   name    = var.public_dns_name
   type    = "CNAME"
   ttl     = 300
